@@ -1,0 +1,15 @@
+---
+title: 'Authentication'
+description: 'Kollie AI API Authentication'
+---
+# Authentication
+
+To authenticate API requests, you need to include an `X-API-Key` header with your API key in each request.
+
+## Example
+
+Here is an example of how to include the `X-API-Key` header in a request:
+
+```bash
+curl -X GET "https://api.kollie.ai/api/v1/your-endpoint" \
+  -H "X-API-Key: your_api_token"

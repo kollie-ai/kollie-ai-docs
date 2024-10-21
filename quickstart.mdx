@@ -15,10 +15,10 @@ Go to [kollie.ai](https://app.kollie.ai) and sign up for an account. Once you've
 
 ```bash call.sh
 curl -X POST 'https://api.kollie.ai/api/v1/agents/{agent_id}/call' \
-  -H 'Authorization: Bearer YOUR_API_TOKEN' \
+  -H "X-API-Key: your_api_token" \
   -H 'Content-Type: application/json' \
   -d '{
-    "to_number": "+1234567890",
+    "to_phone": "+1234567890",
   }'
 ```
 
@@ -34,13 +34,13 @@ url = f'https://api.kollie.ai/api/v1/agents/{agent_id}/call'
 
 # Headers for the request
 headers = {
-    'Authorization': f'Bearer {api_token}',
+    'X-API-Key': f'{api_token}',
     'Content-Type': 'application/json'
 }
 
 # Payload data
 data = {
-    "to_number": "+1234567890"
+    "to_phone": "+1234567890"
 }
 
 # Make the POST request
@@ -66,13 +66,13 @@ const url = `https://api.kollie.ai/api/v1/agents/${agentId}/call`;
 
 // Headers for the request
 const headers = {
-  'Authorization': `Bearer ${apiToken}`,
+  'X-API-Key': `${apiToken}`,
   'Content-Type': 'application/json'
 };
 
 // Payload data
 const data = {
-  to_number: '+1234567890'
+  to_phone: '+1234567890'
 };
 
 // Make the POST request
