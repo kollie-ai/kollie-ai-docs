@@ -57,10 +57,17 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Agents",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create"
+        "api-reference/agents/get",
+        "api-reference/agents/make-call"
+      ]
+    },
+    {
+      "group": "Calls",
+      "pages": [
+        "api-reference/calls/get",
+        "api-reference/calls/get-by-id"
       ]
     }
   ],
