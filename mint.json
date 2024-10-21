@@ -51,6 +51,12 @@
       ]
     },
     {
+      "group": "Guides",
+      "pages": [
+        "guides/webhooks"
+      ]
+    },
+    {
       "group": "API Documentation",
       "pages": [
         "api-reference/introduction",
