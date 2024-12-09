@@ -74,7 +74,8 @@
       "group": "Calls",
       "pages": [
         "api-reference/calls/get",
-        "api-reference/calls/get-by-id"
+        "api-reference/calls/get-by-id",
+        "api-reference/calls/get-recording"
       ]
     }
   ],
