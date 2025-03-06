@@ -84,7 +84,10 @@
         "api-reference/campaigns/get",
         "api-reference/campaigns/get-by-id",
         "api-reference/campaigns/create",
-        "api-reference/campaigns/update"
+        "api-reference/campaigns/update",
+        "api-reference/campaigns/update-status",
+        "api-reference/campaigns/get-config",
+        "api-reference/campaigns/update-campaign-config"
       ]
     }
   ],
