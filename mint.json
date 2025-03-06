@@ -77,6 +77,15 @@
         "api-reference/calls/get-by-id",
         "api-reference/calls/get-recording"
       ]
+    },
+    {
+      "group": "Campaigns",
+      "pages": [
+        "api-reference/campaigns/get",
+        "api-reference/campaigns/get-by-id",
+        "api-reference/campaigns/create",
+        "api-reference/campaigns/update"
+      ]
     }
   ],
   "footerSocials": {

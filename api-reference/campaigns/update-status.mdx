@@ -1,0 +1,34 @@
+---
+title: 'Update Campaign Status'
+api: 'PUT /api/v1/campaigns/{campaign_id}/status'
+description: 'Updates the status of a campaign. Can only update paused campaigns. Requires admin or manager role.'
+openapi: 'PUT /api/v1/campaigns/{campaign_id}/status'
+---
+
+Updates the status of an existing campaign. This endpoint can only be used to update campaigns that are in a paused state. The user must have either admin or manager role to perform this operation.
+
+### Path Parameters
+
+<ParamField query="campaign_id" type="string" required>
+  The unique identifier of the campaign to update
+</ParamField>
+
+### Request Body
+
+<ParamField body="status" type="string" required>
+  The new status for the campaign. Must be one of: draft, paused, running, finished, canceled
+</ParamField>
+
+### Response
+
+<ResponseField name="message" type="string">
+  A message indicating the result of the operation
+</ResponseField>
+
+<ResponseField name="meta" type="object">
+  Additional metadata about the response
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  The updated campaign object
+</ResponseField> 

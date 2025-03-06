@@ -1,0 +1,34 @@
+---
+title: 'Get Campaign Config'
+api: 'GET /api/v1/campaigns/{campaign_id}/config'
+description: 'Gets the configuration for a specific campaign.'
+openapi: 'GET /api/v1/campaigns/{campaign_id}/config'
+---
+
+Retrieves the configuration settings for a specific campaign.
+
+### Path Parameters
+
+<ParamField query="campaign_id" type="string" required>
+  The unique identifier of the campaign
+</ParamField>
+
+### Response
+
+<ResponseField name="message" type="string">
+  A message indicating the result of the operation
+</ResponseField>
+
+<ResponseField name="meta" type="object">
+  Additional metadata about the response
+</ResponseField>
+
+<ResponseField name="data" type="object">
+  The campaign configuration object containing:
+  - call_on_weekend: boolean - Whether to make calls on weekends
+  - queue_again: boolean - Whether to queue calls again
+  - call_back_attempts: integer - Number of callback attempts
+  - campaign_id: string - The ID of the campaign
+  - id: string - The ID of the config
+  - created_at: string - Timestamp of when the config was created
+</ResponseField> 
