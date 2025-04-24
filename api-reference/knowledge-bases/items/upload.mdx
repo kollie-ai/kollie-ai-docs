@@ -1,0 +1,71 @@
+---
+title: 'Upload Knowledge Base Item'
+api: 'POST /api/v1/knowledge-base/{kb_id}/items'
+description: 'Upload a new knowledge base item (PDF or TXT file) to a specific knowledge base.'
+openapi: 'POST /api/v1/knowledge-base/{kb_id}/items'
+---
+
+# Upload Knowledge Base Item
+
+This endpoint allows you to upload a new item (PDF or TXT file) to a knowledge base.
+
+## Request
+
+### Headers
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| Authorization | string | Yes | Bearer token for authentication |
+| Content-Type | string | Yes | multipart/form-data |
+
+### Path Parameters
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| kb_id | string | Yes | The ID of the knowledge base |
+
+### Form Data
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| file | file | Yes | The PDF or TXT file to upload |
+| name | string | No | Custom name for the item (defaults to filename) |
+
+## Response
+
+### 200 OK
+
+```json
+{
+  "data": {
+    "id": "string",
+    "name": "string",
+    "file_type": "string",
+    "status": "string",
+    "created_at": "string",
+    "updated_at": "string",
+    "knowledge_base_id": "string"
+  }
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | string | Unique identifier for the uploaded item |
+| name | string | Name of the item |
+| file_type | string | Type of the file (PDF or TXT) |
+| status | string | Current status of the item |
+| created_at | string | Timestamp when the item was created |
+| updated_at | string | Timestamp when the item was last updated |
+| knowledge_base_id | string | ID of the knowledge base this item belongs to |
+
+## Example
+
+```bash
+curl -X POST 'https://api.kollie.ai/api/v1/knowledge-base/123e4567-e89b-12d3-a456-426614174000/items' \
+  -H 'Authorization: Bearer YOUR_API_TOKEN' \
+  -F 'file=@document.pdf' \
+  -F 'name=Product Manual'
+``` 

@@ -1,0 +1,70 @@
+---
+title: 'List Knowledge Base Items'
+api: 'GET /api/v1/knowledge-base/{kb_id}/items'
+description: 'List all items in a specific knowledge base.'
+openapi: 'GET /api/v1/knowledge-base/{kb_id}/items'
+---
+
+# List Knowledge Base Items
+
+This endpoint returns a list of all items in a specific knowledge base.
+
+## Request
+
+### Headers
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| Authorization | string | Yes | Bearer token for authentication |
+
+### Path Parameters
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| kb_id | string | Yes | The ID of the knowledge base |
+
+### Query Parameters
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| file_type | string | No | Filter items by file type (PDF or TXT) |
+| status | string | No | Filter items by status |
+
+## Response
+
+### 200 OK
+
+```json
+{
+  "data": [
+    {
+      "id": "string",
+      "name": "string",
+      "file_type": "string",
+      "status": "string",
+      "created_at": "string",
+      "updated_at": "string",
+      "knowledge_base_id": "string"
+    }
+  ]
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | string | Unique identifier for the item |
+| name | string | Name of the item |
+| file_type | string | Type of the file (PDF or TXT) |
+| status | string | Current status of the item |
+| created_at | string | Timestamp when the item was created |
+| updated_at | string | Timestamp when the item was last updated |
+| knowledge_base_id | string | ID of the knowledge base this item belongs to |
+
+## Example
+
+```bash
+curl -X GET 'https://api.kollie.ai/api/v1/knowledge-base/123e4567-e89b-12d3-a456-426614174000/items' \
+  -H 'Authorization: Bearer YOUR_API_TOKEN'
+``` 

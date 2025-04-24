@@ -89,6 +89,21 @@
         "api-reference/campaigns/get-config",
         "api-reference/campaigns/update-campaign-config"
       ]
+    },
+    {
+      "group": "Knowledge Bases",
+      "pages": [
+        "api-reference/knowledge-bases/index",
+        "api-reference/knowledge-bases/list",
+        "api-reference/knowledge-bases/create",
+        "api-reference/knowledge-bases/get",
+        "api-reference/knowledge-bases/update",
+        "api-reference/knowledge-bases/delete",
+        "api-reference/knowledge-bases/items/list",
+        "api-reference/knowledge-bases/items/upload",
+        "api-reference/knowledge-bases/items/get",
+        "api-reference/knowledge-bases/items/delete"
+      ]
     }
   ],
   "footerSocials": {

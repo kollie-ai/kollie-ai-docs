@@ -1,0 +1,55 @@
+---
+title: 'List Knowledge Bases'
+api: 'GET /api/v1/knowledge-base/'
+description: 'List all knowledge bases for the current organization.'
+openapi: 'GET /api/v1/knowledge-base/'
+---
+
+# List Knowledge Bases
+
+This endpoint returns a list of all knowledge bases associated with your organization.
+
+## Request
+
+### Headers
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| Authorization | string | Yes | Bearer token for authentication |
+
+## Response
+
+### 200 OK
+
+```json
+{
+  "data": [
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "created_at": "string",
+      "updated_at": "string",
+      "organization_id": "string"
+    }
+  ]
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | string | Unique identifier for the knowledge base |
+| name | string | Name of the knowledge base |
+| description | string | Description of the knowledge base |
+| created_at | string | Timestamp when the knowledge base was created |
+| updated_at | string | Timestamp when the knowledge base was last updated |
+| organization_id | string | ID of the organization that owns the knowledge base |
+
+## Example
+
+```bash
+curl -X GET 'https://api.kollie.ai/api/v1/knowledge-base/' \
+  -H 'Authorization: Bearer YOUR_API_TOKEN'
+``` 

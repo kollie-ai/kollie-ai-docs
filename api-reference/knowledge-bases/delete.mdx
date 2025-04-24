@@ -1,0 +1,59 @@
+---
+title: 'Delete Knowledge Base'
+api: 'DELETE /api/v1/knowledge-base/{kb_id}'
+description: 'Delete a knowledge base and all its items.'
+openapi: 'DELETE /api/v1/knowledge-base/{kb_id}'
+---
+
+# Delete Knowledge Base
+
+This endpoint deletes a knowledge base and all its associated items.
+
+## Request
+
+### Headers
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| Authorization | string | Yes | Bearer token for authentication |
+
+### Path Parameters
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| kb_id | string | Yes | The ID of the knowledge base to delete |
+
+## Response
+
+### 200 OK
+
+```json
+{
+  "data": {
+    "id": "string",
+    "name": "string",
+    "description": "string",
+    "created_at": "string",
+    "updated_at": "string",
+    "organization_id": "string"
+  }
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | string | Unique identifier for the deleted knowledge base |
+| name | string | Name of the deleted knowledge base |
+| description | string | Description of the deleted knowledge base |
+| created_at | string | Timestamp when the knowledge base was created |
+| updated_at | string | Timestamp when the knowledge base was last updated |
+| organization_id | string | ID of the organization that owned the knowledge base |
+
+## Example
+
+```bash
+curl -X DELETE 'https://api.kollie.ai/api/v1/knowledge-base/123e4567-e89b-12d3-a456-426614174000' \
+  -H 'Authorization: Bearer YOUR_API_TOKEN'
+``` 

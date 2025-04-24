@@ -1,0 +1,81 @@
+---
+title: 'Update Knowledge Base'
+api: 'PUT /api/v1/knowledge-base/{kb_id}'
+description: 'Update a knowledge base.'
+openapi: 'PUT /api/v1/knowledge-base/{kb_id}'
+---
+
+# Update Knowledge Base
+
+This endpoint updates an existing knowledge base.
+
+## Request
+
+### Headers
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| Authorization | string | Yes | Bearer token for authentication |
+| Content-Type | string | Yes | application/json |
+
+### Path Parameters
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| kb_id | string | Yes | The ID of the knowledge base to update |
+
+### Body
+
+```json
+{
+  "name": "string",
+  "description": "string"
+}
+```
+
+### Body Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| name | string | No | New name for the knowledge base |
+| description | string | No | New description for the knowledge base |
+
+## Response
+
+### 200 OK
+
+```json
+{
+  "data": {
+    "id": "string",
+    "name": "string",
+    "description": "string",
+    "created_at": "string",
+    "updated_at": "string",
+    "organization_id": "string"
+  }
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | string | Unique identifier for the knowledge base |
+| name | string | Updated name of the knowledge base |
+| description | string | Updated description of the knowledge base |
+| created_at | string | Timestamp when the knowledge base was created |
+| updated_at | string | Timestamp when the knowledge base was last updated |
+| organization_id | string | ID of the organization that owns the knowledge base |
+
+## Example
+
+```bash
+curl -X PUT 'https://api.kollie.ai/api/v1/knowledge-base/123e4567-e89b-12d3-a456-426614174000' \
+  -H 'Authorization: Bearer YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "Updated Product Documentation",
+    "description": "Updated documentation for our product features and services"
+  }'
+``` 

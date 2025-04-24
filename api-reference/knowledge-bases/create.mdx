@@ -1,0 +1,75 @@
+---
+title: 'Create Knowledge Base'
+api: 'POST /api/v1/knowledge-base/'
+description: 'Create a new knowledge base for the organization.'
+openapi: 'POST /api/v1/knowledge-base/'
+---
+
+# Create Knowledge Base
+
+This endpoint creates a new knowledge base for your organization.
+
+## Request
+
+### Headers
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| Authorization | string | Yes | Bearer token for authentication |
+| Content-Type | string | Yes | application/json |
+
+### Body
+
+```json
+{
+  "name": "string",
+  "description": "string"
+}
+```
+
+### Body Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| name | string | Yes | Name of the knowledge base |
+| description | string | No | Description of the knowledge base |
+
+## Response
+
+### 200 OK
+
+```json
+{
+  "data": {
+    "id": "string",
+    "name": "string",
+    "description": "string",
+    "created_at": "string",
+    "updated_at": "string",
+    "organization_id": "string"
+  }
+}
+```
+
+### Response Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | string | Unique identifier for the knowledge base |
+| name | string | Name of the knowledge base |
+| description | string | Description of the knowledge base |
+| created_at | string | Timestamp when the knowledge base was created |
+| updated_at | string | Timestamp when the knowledge base was last updated |
+| organization_id | string | ID of the organization that owns the knowledge base |
+
+## Example
+
+```bash
+curl -X POST 'https://api.kollie.ai/api/v1/knowledge-base/' \
+  -H 'Authorization: Bearer YOUR_API_TOKEN' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "Product Documentation",
+    "description": "Documentation for our product features and services"
+  }'
+``` 
